@@ -68,6 +68,8 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
 
+import org.jctools.queues.MpscChunkedArrayQueue;
+
 import com.github.benmanes.caffeine.base.UnsafeAccess;
 import com.github.benmanes.caffeine.cache.LinkedDeque.PeekingIterator;
 import com.github.benmanes.caffeine.cache.References.InternalReference;
@@ -235,7 +237,7 @@ abstract class BoundedLocalCache<K, V> extends BLCHeader.DrainStatusRef<K, V>
     return false;
   }
 
-  protected WriteBuffer<Runnable> writeBuffer() {
+  protected MpscChunkedArrayQueue<Runnable> writeBuffer() {
     throw new UnsupportedOperationException();
   }
 
