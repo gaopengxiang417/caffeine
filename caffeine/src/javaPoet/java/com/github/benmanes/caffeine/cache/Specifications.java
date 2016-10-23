@@ -100,7 +100,7 @@ public final class Specifications {
       ClassName.get(PACKAGE_NAME, "WriteOrderDeque"), NODE);
 
   public static final ClassName WRITE_QUEUE_TYPE =
-      ClassName.get("org.jctools.queues", "MpscChunkedArrayQueue");
+      ClassName.get("org.jctools.queues", "MpscGrowableArrayQueue");
   public static final TypeName WRITE_QUEUE = ParameterizedTypeName.get(
       WRITE_QUEUE_TYPE, ClassName.get(Runnable.class));
 

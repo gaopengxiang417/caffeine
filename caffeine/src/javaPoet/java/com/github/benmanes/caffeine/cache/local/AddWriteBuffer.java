@@ -39,7 +39,7 @@ public final class AddWriteBuffer extends LocalCacheRule {
   @Override
   protected void execute() {
     context.constructor.addStatement(
-        "this.writeBuffer = new $T<>(WRITE_BUFFER_MIN, WRITE_BUFFER_MAX, false)", WRITE_QUEUE_TYPE);
+        "this.writeBuffer = new $T<>(WRITE_BUFFER_MIN, WRITE_BUFFER_MAX)", WRITE_QUEUE_TYPE);
     context.cache.addField(FieldSpec.builder(
         WRITE_QUEUE, "writeBuffer", privateFinalModifiers).build());
     context.cache.addMethod(MethodSpec.methodBuilder("writeBuffer")

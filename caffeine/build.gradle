@@ -19,7 +19,7 @@ plugins.withType(EclipsePlugin) {
 }
 
 dependencies {
-  compile test_libraries.jctools
+  compile 'com.github.JCTools.JCTools:jctools-core:f623779212'
 
   testCompile libraries.ycsb
   testCompile libraries.guava
